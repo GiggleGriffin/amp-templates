@@ -1,0 +1,33 @@
+Meta.Name=RuneScape: Dragonwilds Dedicated Server
+Meta.Description=Dedicated server for RuneScape: Dragonwilds
+Meta.Author=GiggleGriffin
+Meta.URL=https://steamdb.info/app/4019830/
+Meta.DisplayImageSource=steam:4019830
+
+App.RootDir=./runescape-dragonwilds/
+App.BaseDirectory=./runescape-dragonwilds/4019830/
+App.WorkingDir=4019830
+
+; Windows executable (if ever used)
+App.ExecutableWin=4019830\RSDragonwilds.exe
+
+; Linux executable (PRIMARY)
+App.ExecutableLinux=4019830/RSDragonwilds/Binaries/Linux/RSDragonwildsServer-Linux-Shipping
+
+; Startup arguments
+App.CommandLineArgs=
+App.WindowsCommandLineArgs=-log -NewConsole
+App.LinuxCommandLineArgs=-log
+
+; Ports
+App.PrimaryApplicationPortRef=GamePort1
+App.UniversalSleepApplicationUDPPortRef=GamePort1
+
+; Console settings
+App.ConsoleMode=tty
+App.SupportsLiveConsole=true
+
+; No startup detection yet (can improve later)
+App.StartupGracePeriodSeconds=10
+App.StartupLagSeconds=0
+App.ExitCodeBehaviour=Restart
