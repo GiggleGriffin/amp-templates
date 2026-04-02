@@ -1,33 +1,92 @@
-Meta.Name=RuneScape: Dragonwilds Dedicated Server
-Meta.Description=Dedicated server for RuneScape: Dragonwilds
-Meta.Author=GiggleGriffin
+Meta.DisplayName=RuneScape: Dragonwilds
+Meta.Description=RuneScape: Dragonwilds Dedicated Server
+Meta.Arch=x86_64
+Meta.Author=gigglegriffin - Made with AMP Config Generator
 Meta.URL=https://steamdb.info/app/4019830/
-Meta.DisplayImageSource=steam:4019830
+Meta.MinAMPVersion=2.4.6.6
+Meta.SpecificDockerImage=
+Meta.DockerRequired=False
+Meta.ContainerPolicy=Supported
+Meta.ContainerPolicyReason=
+Meta.Prerequsites=[]
+Meta.EndpointURIFormat=steam://connect/{ip}:{GenericModule.App.Ports.$GamePort1}
+Meta.AppConfigId=4a546333-af3e-480d-84f8-11daa668f67e
 
-App.RootDir=./runescape-dragonwilds/
-App.BaseDirectory=./runescape-dragonwilds/4019830/
-App.WorkingDir=4019830
-
-; Windows executable (if ever used)
-App.ExecutableWin=4019830\RSDragonwilds.exe
-
-; Linux executable (PRIMARY)
-App.ExecutableLinux=4019830/RSDragonwilds/Binaries/Linux/RSDragonwildsServer-Linux-Shipping
-
-; Startup arguments
+App.AdminMethod=STDIO
+App.HasReadableConsole=true
+App.HasWritableConsole=true
+App.DisplayName=RuneScape: Dragonwilds
 App.CommandLineArgs=
 App.WindowsCommandLineArgs=-log -NewConsole
 App.LinuxCommandLineArgs=-log
+App.CommandLineParameterFormat=-{0} "{1}"
+App.CommandLineParameterDelimiter= 
+App.RapidStartup=false
+App.ApplicationReadyMode=Immediate
+App.ExitMethod=OS_CLOSE
+App.ExitString=stop
+App.ExitTimeout=30
+App.ExitFile=app_exit.lck
+App.SupportsLiveSettingsChanges=False
+App.LiveSettingChangeCommandFormat=set {0} "{1}"
+App.ApplicationIPBinding=0.0.0.0
 
-; Ports
-App.PrimaryApplicationPortRef=GamePort1
+App.AdminPortRef=
 App.UniversalSleepApplicationUDPPortRef=GamePort1
+App.PrimaryApplicationPortRef=GamePort1
+App.UniversalSleepSteamQueryPortRef=
 
-; Console settings
-App.ConsoleMode=tty
-App.SupportsLiveConsole=true
+App.MaxUsers=8
+App.UseRandomAdminPassword=True
+App.RemoteAdminPassword=
+App.AdminLoginTransform=None
+App.RCONConnectDelaySeconds=30
+App.RCONConnectRetrySeconds=15
+App.RCONHeartbeatCommand=ping
+App.RCONHeartbeatMinutes=0
+App.TelnetLoginFormat={0}
 
-; No startup detection yet (can improve later)
-App.StartupGracePeriodSeconds=10
-App.StartupLagSeconds=0
-App.ExitCodeBehaviour=Restart
+App.SteamUpdateAnonymousLogin=True
+App.SteamForceLoginPrompt=False
+App.SupportsUniversalSleep=False
+App.WakeupMode=Any
+App.TemplateMatchRegex={{(\$?[\w]+)}}
+App.MonitorChildProcess=False
+App.MonitorChildProcessWaitMs=1000
+App.MonitorChildProcessName=
+App.Compatibility=None
+App.SteamWorkshopDownloadLocation=
+
+Console.FilterMatchRegex=
+Console.FilterMatchReplacement=
+Console.ThrowawayMessageRegex=
+Console.UpdateAvailableRegex=
+Console.SuppressLogAtStart=False
+Console.ActivateLogRegex=
+Console.UserActions={}
+Console.SleepMode=False
+Console.SleepOnStart=False
+Console.SleepDelayMinutes=5
+Console.DozeDelay=2
+Console.AutoRetryCount=5
+Console.SleepStartThresholdSeconds=25
+Console.AppReadyRegex=^$
+Console.UserJoinRegex=^$
+Console.UserLeaveRegex=^$
+Console.UserChatRegex=^$
+
+Meta.OS=3
+Meta.ConfigManifest=runescape-dragonwildsconfig.json
+Meta.MetaConfigManifest=runescape-dragonwildsmetaconfig.json
+Meta.ConfigRoot=runescape-dragonwilds.kvp
+
+App.RootDir=./runescape-dragonwilds/
+Meta.DisplayImageSource=steam:4019830
+App.BaseDirectory=./runescape-dragonwilds/4019830/
+App.WorkingDir=4019830
+App.ExecutableWin=4019830\RSDragonwilds.exe
+App.ExecutableLinux=4019830/RSDragonwilds/Binaries/Linux/RSDragonwildsServer-Linux-Shipping
+
+App.Ports=@IncludeJson[runescape-dragonwildsports.json]
+App.UpdateSources=@IncludeJson[runescape-dragonwildsupdates.json]
+App.EnvironmentVariables={}
